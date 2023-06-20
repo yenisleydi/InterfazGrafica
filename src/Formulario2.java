@@ -7,11 +7,8 @@ public class Formulario2 extends JFrame{
     private JTable jTable;
     private DefaultTableModel modelo;
     private JButton botonRegresar;
-    private JPanel panel1,panelContainer;
 
     public Formulario2 (){
-        panel1=new JPanel();
-        panelContainer=new JPanel();
         crearBotones();
         initControl();
         configTable();
@@ -21,23 +18,12 @@ public class Formulario2 extends JFrame{
     private void crearBotones() {
         botonRegresar = new JButton("Regresar");
         botonRegresar.addActionListener(e -> {
-            //FormList formList = new FormList();
-            //formList.setVisible(true);
-            //setVisible(false);
             Formulario formulario = new Formulario();
             formulario.setVisible(true);
             setVisible(false);
         });
     }
     private void initControl(){
-        /*
-             DefaultTableModel()
-             DefaultTableModel(int numRows, int numColumns)
-             DefaultTableModel(Object[][] data, Object[] columnNames)
-             DefaultTableModel(Object[] columnNames, int numRows)
-             DefaultTableModel(Vector columnNames, int numRows)
-             DefaultTableModel(Vector data, Vector columNames)
-         */
         modelo = new DefaultTableModel();
         // DefaultTableModel modelo1 = new DefaultTableModel(UtilTable.usuarios,UtilTable.titulos);
         //modelo.setDataVector(UtilTable.usuarios,UtilTable.titulos);

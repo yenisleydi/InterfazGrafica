@@ -83,7 +83,7 @@ public class Formulario extends JFrame implements ChangeListener, ItemListener {
     private void crearBotones() {
         radio1.setText("Deshabilita uno");
         radio2.setText("Deshabilita dos");
-        radio3.setText("Deshabilita todo");
+        radio3.setText("Habilitar todo");
         boton1 = new JButton("Aceptar");
         boton2 = new JButton("Consultar");
         boton3=new JButton("Tabla");
@@ -171,8 +171,8 @@ public class Formulario extends JFrame implements ChangeListener, ItemListener {
         text3.setText("");
         text4.setText("");
         text5.setText("");
-        /*text6.setText("");
-        text7.setText("");*/
+        text6.setText("");
+        text7.setText("");
         text8.setText("");
     }
     public static ArrayList<Alumno> getElemento (){
@@ -198,12 +198,7 @@ public class Formulario extends JFrame implements ChangeListener, ItemListener {
             String carrera = text7.getText();
             String matricula = text8.getText();
             alumnos.add(new Alumno(nombre, apellidos, telefono, ine, genero, semestre, carrera, matricula));
-
-            // Mostrar la ventana FormList con los datos actualizados
-            //FormList formList = new FormList();
             mostrar(alumnos);
-            //formList.setVisible(true);
-
 
             // Limpiar los campos de texto del formulario principal
             clearFields();
@@ -220,21 +215,21 @@ public class Formulario extends JFrame implements ChangeListener, ItemListener {
     }
     public void stateChanged(ChangeEvent e) {
         if (radio1.isSelected()) {
-            text5.setEnabled(false);
+            text8.setEnabled(false);
         }
         if (radio2.isSelected()) {
             text5.setEditable(false);
             text8.setEditable(false);
         }
         if (radio3.isSelected()) {
-            text1.setEditable(false);
-            text2.setEditable(false);
-            text3.setEditable(false);
-            text4.setEditable(false);
-            text5.setEditable(false);
-            text6.setEditable(false);
-            text7.setEditable(false);
-            text8.setEditable(false);
+            text1.setEditable(true);
+            text2.setEditable(true);
+            text3.setEditable(true);
+            text4.setEditable(true);
+            text5.setEditable(true);
+            text6.setEditable(true);
+            text7.setEditable(true);
+            text8.setEditable(true);
         }
     }
     private void llenarCombo() {
